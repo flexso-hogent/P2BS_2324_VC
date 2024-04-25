@@ -1,15 +1,15 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Sun Apr 21 2024 12:41:38 GMT+0200 (Central European Summer Time)|
+|**Generation Date and Time**<br>Thu Apr 25 2024 19:13:19 GMT+0200 (Central European Summer Time)|
 |**App Generator**<br>@sap/generator-fiori-freestyle|
-|**App Generator Version**<br>1.12.5|
+|**App Generator Version**<br>1.13.2|
 |**Generation Platform**<br>Visual Studio Code|
 |**Template Used**<br>simple|
 |**Service Type**<br>Local Cap|
 |**Service URL**<br>http://localhost:4004/odata/v4/event/
 |**Module Name**<br>flexso|
-|**Application Title**<br>Flexso Event Page|
+|**Application Title**<br>flexso event app|
 |**Namespace**<br>|
 |**UI5 Theme**<br>sap_horizon|
 |**UI5 Version**<br>1.123.1|
@@ -19,7 +19,7 @@
 
 ## flexso
 
-Available events and their sessions.
+An SAP Fiori application.
 
 ### Starting the generated app
 
