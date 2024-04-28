@@ -25,7 +25,7 @@
 						</Column>
 					</columns>
 					<items>
-						<ColumnListItem id="_IDGenColumnListItem1" type="Navigation">
+						<ColumnListItem id="_IDGenColumnListItem1" type="Navigation" press=".onListItemPress">
 							<cells>
 								<ObjectIdentifier id="_IDGenObjectIdentifier1" title="{naam}" text="{eventID}"/>
 

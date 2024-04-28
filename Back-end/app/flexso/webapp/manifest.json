@@ -26,6 +26,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "sap.ui": {
       "technology": "UI5",
       "icons": {
@@ -40,6 +41,27 @@
         "desktop": true,
         "tablet": true,
         "phone": true
+=======
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.60.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+>>>>>>> 0ab32fe (a bit of the flexible column layout)
       }
     },
     "sap.ui5": {

@@ -1,0 +1,68 @@
+<mvc:View
+	xmlns="sap.uxap"
+	xmlns:m="sap.m"
+	xmlns:f="sap.f"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc">
+	<ObjectPageLayout
+		id="ObjectPageLayout"
+		showTitleInHeaderContent="true"
+		alwaysShowContentHeader="false"
+		preserveHeaderStateOnScroll="false"
+		headerContentPinnable="true"
+		isChildPage="true"
+		upperCaseAnchorBar="false">
+		<headerTitle>
+            
+			<ObjectPageDynamicHeaderTitle  id="_IDGenObjectPageDynamicHeaderTitle1">
+				<actions>
+                    <m:ToggleButton id="_IDGenToggleButton2"
+						text="Public"
+						type="Emphasized"/>
+					<m:ToggleButton id="_IDGenToggleButton1"
+						text="Edit"
+						type="Emphasized"/>
+					<m:Button id="_IDGenButton1"
+						text="Delete"
+						type="Transparent"/>
+				</actions>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+        <headerContent>
+			<m:FlexBox id="_IDGenFlexBox1" wrap="Wrap" fitContainer="true" alignItems="Stretch">
+				<f:Avatar id="_IDGenAvatar1"
+					displaySize="L"
+					displayShape="Square"
+					class="sapUiTinyMarginEnd">
+				</f:Avatar>
+				<m:VBox id="_IDGenVBox1" justifyContent="Center" class="sapUiSmallMarginEnd">
+					<m:Label id="_IDGenLabel1" text="Description"/>
+				</m:VBox>
+				
+			</m:FlexBox>
+		</headerContent>
+        <sections>
+			<ObjectPageSection id="_IDGenObjectPageSection1" title="Sessions">
+				<subSections>
+					<ObjectPageSubSection id="_IDGenObjectPageSubSection1">
+						<blocks>
+							<m:Text id="text1" text="test"></m:Text>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection id="_IDGenObjectPageSection2" title="Participants">
+				<subSections>
+					<ObjectPageSubSection id="_IDGenObjectPageSubSection2">
+						<blocks>
+							<m:Text id="text2" text="test2"></m:Text>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+
+
+	</ObjectPageLayout>
+</mvc:View>
