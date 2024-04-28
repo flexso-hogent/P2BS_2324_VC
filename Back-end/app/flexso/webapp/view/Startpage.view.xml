@@ -1,4 +1,5 @@
 <mvc:View controllerName="flexso.controller.Startpage"
+<<<<<<< HEAD
     xmlns:mvc="sap.ui.core.mvc" 
     displayBlock="true"
     xmlns="sap.m">
@@ -25,3 +26,54 @@
 	</Page>
     </App>
 </mvc:View>
+=======
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m">
+
+    <App id="Startpage">
+        <Page id="frontPage" title="Events">
+            <Table
+                id="EventsTable"
+                inset="false"
+                items="{path: '/Events'}">
+
+                <!-- Kolommen Definiëren -->
+                <columns>
+                    <Column id="_IDGenColumn1">
+                        <Text id="_IDGenText1" text="Event ID" />
+                    </Column>
+                    <Column id="_IDGenColumn2">
+                        <Text id="_IDGenText2" text="Naam" />
+                    </Column>
+                    <Column id="_IDGenColumn3">
+                        <Text id="_IDGenText3" text="Beschrijving" />
+                    </Column>
+                    <Column id="_IDGenColumn4">
+                        <Text id="_IDGenText4" text="Datum" />
+                    </Column>
+					<Column id="_IDGenColumn5">
+                        <Text id="_IDGenText5" text="Locatie" />
+                    </Column>
+                </columns>
+
+                <!-- Items in de Tabel -->
+                <items>
+                    <ColumnListItem id="_IDGenColumnListItem1">
+                        <cells>
+                            <Text id="_IDGenText6" text="{eventID}" />
+                            <Text id="_IDGenText7" text="{naam}" />
+                            <Text id="_IDGenText8" text="{beschrijving}" />
+                            <Text id="_IDGenText9" text="{datum}" />
+							<Text id="_IDGenText10" text="{locatie}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+
+            </Table>
+        </Page>
+    </App>
+
+</mvc:View>
+
+>>>>>>> 685f207 (New files added)
