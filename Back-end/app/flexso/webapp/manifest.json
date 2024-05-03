@@ -60,6 +60,91 @@
         "sap.ui.comp": {},
         "sap.ui.generic.app": {},
         "sap.ui.table": {},
+        "sap.ushell": {},
+        "sap.uxap": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "flexso.i18n.i18n"
+        }
+      },
+      "eventModel": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "synchronizationMode": "None",
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.f.routing.Router",
+        "type": "View",
+        "viewType": "XML",
+        "path": "flexso.view",
+        "controlId": "flexibleColumnLayout",
+        "transition": "slide",
+        "bypassed": {
+          "target": "TargetApp"
+        },
+        "async": true
+      },
+      "routes": [
+        {
+          "pattern": ":layout:",
+          "name": "list",
+          "target": ["list", "detail"]
+        },
+        {
+          "pattern": "detail/{eventID}/{layout}",
+          "name": "detail",
+          "target": ["list", "detail"]
+        }
+      ],
+      "targets": {
+        "TargetApp": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "App",
+          "viewName": "App"
+        },
+        "list": {
+          "name": "List",
+          "controlAggregation": "beginColumnPages"
+        },
+        "detail": {
+          "name": "Detail",
+          "controlAggregation": "midColumnPages"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "flexso.view.Account",
+      "type": "XML",
+      "async": true,
+      "id": "fcl"
+    }
+  }
+}
+
         "sap.ushell": {}
 >>>>>>> 0ab32fe (a bit of the flexible column layout)
       }

@@ -1,7 +1,7 @@
 namespace my.events;
 
 entity Events {
-  key eventID      : UUID;
+  key eventID      : Int16;
       naam         : String;
       beschrijving : String;
       datum        : DateTime;
@@ -11,7 +11,7 @@ entity Events {
 }
 
 entity Sessions {
-  key sessieID     : UUID;
+  key sessieID     : Int16;
       naam         : String;
       beschrijving : String;
       spreker      : String;
