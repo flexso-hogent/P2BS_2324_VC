@@ -3,7 +3,9 @@
 	xmlns:m="sap.m"
 	xmlns:f="sap.f"
 	xmlns:form="sap.ui.layout.form"
-	xmlns:mvc="sap.ui.core.mvc">
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="flexso.controller.Detail"
+	id="Detail">
 	<ObjectPageLayout
 		id="ObjectPageLayout"
 		showTitleInHeaderContent="true"
@@ -15,10 +17,14 @@
 		<headerTitle>
             
 			<ObjectPageDynamicHeaderTitle  id="_IDGenObjectPageDynamicHeaderTitle1">
+				<expandedHeading>
+					<m:Title id="_IDGenTitle1" text="{naam}" wrapping="true" class="sapUiSmallMarginEnd"/>
+				</expandedHeading>
 				<actions>
                     <m:ToggleButton id="_IDGenToggleButton2"
 						text="Public"
-						type="Emphasized"/>
+						type="Emphasized"
+						press=".onEditToggleButtonPress"/>
 					<m:ToggleButton id="_IDGenToggleButton1"
 						text="Edit"
 						type="Emphasized"/>
@@ -62,7 +68,13 @@
 				</subSections>
 			</ObjectPageSection>
 		</sections>
-
+		<footer>
+			<m:OverflowToolbar id="_IDGenOverflowToolbar1">
+				<m:ToolbarSpacer id="_IDGenToolbarSpacer1"/>
+				<m:Button id="_IDGenButton2" type="Accept" text="Save"/>
+				<m:Button id="_IDGenButton3" type="Reject" text="Cancel"/>
+			</m:OverflowToolbar>
+		</footer>
 
 	</ObjectPageLayout>
 </mvc:View>

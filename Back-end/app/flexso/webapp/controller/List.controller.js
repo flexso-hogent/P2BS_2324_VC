@@ -11,11 +11,13 @@ sap.ui.define([
 
 	return Controller.extend("flexso.controller.List", {
 		onInit: function () {
+			this.oRouter = this.getOwnerComponent().getRouter();
 		},
-		onListItemPress: function () {
-			var oFCL = this.oView.getParent().getParent();
+		onListItemPress: function (oEvent) {
+			var productPath = oEvent.getSource().getBindingContext().getPath(),
+				product = productPath.split("/").slice(-1).pop();
 
-			oFCL.setLayout(fioriLibrary.LayoutType.TwoColumnsMidExpanded);
+			this.oRouter.navTo("detail", {layout: fioriLibrary.LayoutType.TwoColumnsMidExpanded, eventID: product});
 		}
 
 	});

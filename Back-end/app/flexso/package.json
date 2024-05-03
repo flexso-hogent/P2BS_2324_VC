@@ -1,45 +1,15 @@
 {
     "name": "flexso",
     "version": "0.0.1",
-    "private": true,
-    "description": "Available events and their sessions.",
+    "description": "An SAP Fiori application.",
     "keywords": [
-      "ui5",
-      "openui5",
-      "sapui5"
+        "ui5",
+        "openui5",
+        "sapui5"
     ],
     "main": "webapp/index.html",
-    "dependencies": {
-      "csv-parser": "^3.0.0",
-      "sqlite3": "^5.1.7"
-    },
-    "devDependencies": {
-      "@cap-js/sqlite": "^1",
-      "@sap/ux-specification": "^1.120.8",
-      "@sap/ux-ui5-tooling": "1",
-      "@ui5/cli": "^3.0.0"
-    },
     "scripts": {
-      "start": "fiori run --open \"test/flpSandbox.html?sap-ui-xx-viewCache=false#flexso-display\"",
-      "start-local": "fiori run --config ./ui5-local.yaml --open \"test/flpSandbox.html?sap-ui-xx-viewCache=false#flexso-display\"",
-      "build": "ui5 build --config=ui5.yaml --clean-dest --dest dist",
-      "deploy": "fiori verify",
-      "deploy-config": "fiori add deploy-config",
-      "start-noflp": "fiori run --open \"index.html?sap-ui-xx-viewCache=false\"",
-      "start-variants-management": "fiori run --open \"preview.html?sap-ui-xx-viewCache=false&fiori-tools-rta-mode=true&sap-ui-rta-skip-flex-validation=true#preview-app\"",
-      "watch-flexso": "cds watch --open flexso/webapp/index.html?sap-ui-xx-viewCache=false",
-      "watch-eventapp": "cds watch --open eventapp/webapp/index.html?sap-ui-xx-viewCache=false"
+        "deploy-config": "npx -p @sap/ux-ui5-tooling fiori add deploy-config cf"
     },
-    "cds": {
-      "requires": {
-        "db": {
-          "kind": "sqlite",
-          "credentials": {
-            "url": "db/my-events.sqlite"
-          }
-        }
-      }
-    },
-    "sapuxLayer": "CUSTOMER_BASE"
-  }
-  
+    "devDependencies": { }
+}
