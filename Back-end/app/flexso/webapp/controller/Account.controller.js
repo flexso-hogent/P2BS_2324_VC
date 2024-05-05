@@ -14,10 +14,12 @@ sap.ui.define([
 		onRouteMatched: function (oEvent) {
 			var sRouteName = oEvent.getParameter("name"),
 				oArguments = oEvent.getParameter("arguments");
+		
 
 			// Save the current route name
 			this.currentRouteName = sRouteName;
-			this.currentProduct = oArguments.Events;
+			this.eventID = oArguments.Events;
+	
 		},
 
 		onStateChanged: function (oEvent) {
