@@ -11,7 +11,7 @@ sap.ui.define([
 			this.oRouter.attachRouteMatched(this.onRouteMatched, this);
 		},
 
-		onRouteMatched: function (oEvent) {//TODO: aanpassen aan ons model
+		onRouteMatched: function (oEvent) {
 			var sRouteName = oEvent.getParameter("name"),
 				oArguments = oEvent.getParameter("arguments");
 

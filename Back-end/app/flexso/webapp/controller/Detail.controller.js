@@ -15,18 +15,12 @@ sap.ui.define([
 			this.oRouter.getRoute("detail").attachPatternMatched(this._onProductMatched, this);
 		},
 
-		_onProductMatched: function (oEvent) {
-			this._product = oEvent.getParameter("arguments").product || this._product || "0";
+		_onProductMatched: function (oEvent) {// bind with correct item
+			this._event = oEvent.getParameter("arguments").eventID || this._event|| "0"; 
 			this.getView().bindElement({
-				path: "/ProductCollection/" + this._product,
-				model: "products"
+				path: "/Events" + "(eventID=" + this._event.slice(0,-1).slice(7)+ ")",
+				model: "eventModel"
 			});
-		},
-		onEditToggleButtonPress: function() {
-			var oObjectPage = this.getView().byId("ObjectPageLayout"),
-				bCurrentShowFooterState = oObjectPage.getShowFooter();
-
-			oObjectPage.setShowFooter(!bCurrentShowFooterState);
 		},
 
 		onExit: function () {

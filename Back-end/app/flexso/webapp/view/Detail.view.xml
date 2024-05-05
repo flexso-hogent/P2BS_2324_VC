@@ -18,8 +18,20 @@
             
 			<ObjectPageDynamicHeaderTitle  id="_IDGenObjectPageDynamicHeaderTitle1">
 				<expandedHeading>
-					<m:Title id="_IDGenTitle1" text="{naam}" wrapping="true" class="sapUiSmallMarginEnd"/>
+					<m:Title id="_IDGenTitle1" text="{eventModel>naam}" wrapping="true" class="sapUiSmallMarginEnd"/>
 				</expandedHeading>
+				<snappedHeading>
+					<m:FlexBox id="_IDGenFlexBox2" wrap="Wrap" fitContainer="true" alignItems="Center">
+						<m:FlexBox id="_IDGenFlexBox3" wrap="NoWrap" fitContainer="true" alignItems="Center" class="sapUiTinyMarginEnd">
+							<f:Avatar id="_IDGenAvatar2"
+								src="" 
+								displaySize="S"
+								displayShape="Square"
+								class="sapUiTinyMarginEnd"/>
+							<m:Title id="_IDGenTitle2" text="{eventModel>naam}" wrapping="true"/>
+						</m:FlexBox>
+					</m:FlexBox>
+				</snappedHeading>
 				<actions>
                     <m:ToggleButton id="_IDGenToggleButton2"
 						text="Public"
@@ -43,17 +55,28 @@
 				</f:Avatar>
 				<m:VBox id="_IDGenVBox1" justifyContent="Center" class="sapUiSmallMarginEnd">
 					<m:Label id="_IDGenLabel1" text="Description"/>
+					<m:Text id="_IDGenText1" text="{eventModel>beschrijving}"/>
 				</m:VBox>
 				
 			</m:FlexBox>
 		</headerContent>
         <sections>
-			<ObjectPageSection id="_IDGenObjectPageSection1" title="Sessions">
+			<ObjectPageSection id="_IDGenObjectPageSection1" title="General information">
 				<subSections>
 					<ObjectPageSubSection id="_IDGenObjectPageSubSection1">
-						<blocks>
-							<m:Text id="text1" text="test"></m:Text>
-						</blocks>
+					<m:VBox id="generalInformationVBOX">
+					<m:HBox id="generalInformationHBOX1">
+							<m:Label id="labelLocatie" text="Locatie"></m:Label>
+							<m:Text id="locatie" text="{eventModel>locatie}"></m:Text>
+							
+						
+					</m:HBox>
+					<m:HBox id="generalInformationHBOX2" >
+							<m:Label id="labelDatum" text="Datum"></m:Label>
+							<m:Text id="datum" text="{eventModel>datum}"></m:Text>
+					
+					</m:HBox>
+					</m:VBox>
 					</ObjectPageSubSection>
 				</subSections>
 			</ObjectPageSection>
@@ -68,13 +91,7 @@
 				</subSections>
 			</ObjectPageSection>
 		</sections>
-		<footer>
-			<m:OverflowToolbar id="_IDGenOverflowToolbar1">
-				<m:ToolbarSpacer id="_IDGenToolbarSpacer1"/>
-				<m:Button id="_IDGenButton2" type="Accept" text="Save"/>
-				<m:Button id="_IDGenButton3" type="Reject" text="Cancel"/>
-			</m:OverflowToolbar>
-		</footer>
+
 
 	</ObjectPageLayout>
 </mvc:View>
