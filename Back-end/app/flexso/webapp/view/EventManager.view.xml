@@ -7,8 +7,8 @@
     xmlns:f="sap.ui.layout.form"
     displayBlock="true"
 >
-    
-        <m:Page id="app"
+    <m:App id="appli">
+        <m:Page id="vbn"
             title="Create Event"
             showNavButton="true"
             navButtonPress=".onNavBack"
@@ -24,29 +24,58 @@
                     >
                         <f:content>
                             <m:Label id="_IDGenLabel1" text="Name"/>
-                            <m:Input id="_IDGenInput1" value="{/newEvent/naam}"/>
+                            <m:Input id="_IDGenInput1" value=""/>
 
                             <m:Label id="_IDGenLabel2" text="Description"/>
-                            <m:Input id="_IDGenInput2" value="{/newEvent/beschrijving}"/>
+                            <m:Input id="_IDGenInput2" value=""/>
 
                             <m:Label id="_IDGenLabel3" text="Date"/>
-                            <m:DatePicker id="_IDGenDatePicker1" value="{/newEvent/datum}"/>
+                            <m:DatePicker id="_IDGenDatePicker1" value=""/>
 
                             <m:Label id="_IDGenLabel4" text="Location"/>
-                            <m:Input id="_IDGenInput3" value="{/newEvent/locatie}"/>
+                            <m:Input id="_IDGenInput3" value=""/>
+                        </f:content>
+                    </f:SimpleForm>
+
+                    <f:SimpleForm
+                        id="sessionsForm"
+                        editable="true"
+                        layout="ResponsiveGridLayout"
+                        title="Sessions"
+                    >
+                        <f:content>
+                            <m:Label id="_IDGenLabel12" text="Name"/>
+                            <m:Input id="_IDGenInput12" value=""/>
+
+                            <m:Label id="_IDGenLabel20" text="Type"/>
+                            <m:Input id="_IDGenInput20" value=""/>
+
+                            <m:Label id="_IDGenLabel21" text="Description"/>
+                            <m:Input id="_IDGenInput21" value=""/>
+
+                            <m:Label id="_IDGenLabel22" text="Speaker"/>
+                            <m:Input id="_IDGenInput22" value=""/>
+
+                            <m:Label id="_IDGenLabel31" text="Date"/>
+                            <m:DatePicker id="_IDGenDatePicker31" value=""/>
+
+                            <m:Label id="_IDGenLabel41" text="Room"/>
+                            <m:Input id="_IDGenInput41" value=""/>
                         </f:content>
                     </f:SimpleForm>
             
+                    <!--
                     <m:Table
                         id="sessionsTable"
                         headerText="Sessions"
-                        mode="Delete"
-                        items="{/newEvent/sessions}"
-                        delete=".onDeleteSession"
+
                     >
                         <m:columns>
                             <m:Column id="_IDGenColumn1">
                                 <m:Text id="_IDGenText1" text="Name"/>
+                            </m:Column>
+                            <m:Column id="_IDGenColumn12">
+                                <m:Text id="_IDGenText12" text="Type"/>
                             </m:Column>
                             <m:Column id="_IDGenColumn2">
                                 <m:Text id="_IDGenText2" text="Description"/>
@@ -64,15 +93,17 @@
                         <m:items>
                             <m:ColumnListItem id="_IDGenColumnListItem1">
                                 <m:cells>
-                                    <m:Input id="_IDGenInput4" value="{naam}" editable="true"/>
-                                    <m:Input id="_IDGenInput5" value="{beschrijving}" editable="true"/>
-                                    <m:Input id="_IDGenInput6" value="{spreker}" editable="true"/>
-                                    <m:DatePicker id="_IDGenDatePicker2" value="{datum}" editable="true"/>
-                                    <m:Input id="_IDGenInput7" value="{lokaalnummer}" editable="true"/>
+                                    <m:Input id="_IDGenInput4" value="" editable="true"/>
+                                    <m:Input id="_IDGenInput40" value="" editable="true"/>
+                                    <m:Input id="_IDGenInput5" value="" editable="true"/>
+                                    <m:Input id="_IDGenInput6" value="" editable="true"/>
+                                    <m:DatePicker id="_IDGenDatePicker2" value="" editable="true"/>
+                                    <m:Input id="_IDGenInput7" value="" editable="true"/>
                                 </m:cells>
                             </m:ColumnListItem>
                         </m:items>
                     </m:Table>
+                    -->
 
                     <m:HBox id="_IDGenHBox1">
                         <m:Button id="_IDGenButton1"
@@ -87,5 +118,5 @@
                 </m:VBox>
             </m:content>
         </m:Page>
-    
+    </m:App>
 </mvc:View>
