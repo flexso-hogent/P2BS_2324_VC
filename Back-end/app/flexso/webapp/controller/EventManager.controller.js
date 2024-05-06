@@ -8,8 +8,30 @@ sap.ui.define([
 
     return Controller.extend("flexso.controller.EventManager", {
         onInit: function () {
+
+            var oModel = new JSONModel({
+                newEvent: {
+                    name: "",
+                    description: "",
+                    date: null,
+                    location: "",
+                   // sessions: []
+                }
+            });
+            
             // Stel een JSON-model in voor sessies als tijdelijke opslag
-            var oSessionModel = new JSONModel({ sessions: [] });
+            var oSessionModel = new JSONModel({ 
+                newSessions: {
+                    name: "",
+                    type: "",
+                    description: "",
+                    speaker: "",
+                    date: null,
+                    room: "",
+
+            } });
+            
+            this.getView().setModel(oModel, "eventForm");
             this.getView().setModel(oSessionModel, "sessionModel");
         },
 
@@ -27,8 +49,8 @@ sap.ui.define([
         },
 
         onAddSession: function () {
-            // Voeg een lege sessie toe aan het sessie-model
-            var oSessionModel = this.getView().getModel("sessionModel");
+           
+            var oSessionModel = this.getView().getModel("sessionModel").getData();
             var aSessions = oSessionModel.getProperty("/sessions");
             aSessions.push({ name: "", type: "", description: "", speaker: "", date: "", room: "" });
             oSessionModel.setProperty("/sessions", aSessions);

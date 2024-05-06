@@ -24,16 +24,16 @@
                     >
                         <f:content>
                             <m:Label id="_IDGenLabel1" text="Name"/>
-                            <m:Input id="_IDGenInput1" value=""/>
+                            <m:Input id="_IDGenInput1" value="{oModel>/naam}"/>
 
                             <m:Label id="_IDGenLabel2" text="Description"/>
-                            <m:Input id="_IDGenInput2" value=""/>
+                            <m:Input id="_IDGenInput2" value="{oModel>/beschrijving}"/>
 
                             <m:Label id="_IDGenLabel3" text="Date"/>
-                            <m:DatePicker id="_IDGenDatePicker1" value=""/>
+                            <m:DatePicker id="_IDGenDatePicker1" value="{oModel>/datum}"/>
 
                             <m:Label id="_IDGenLabel4" text="Location"/>
-                            <m:Input id="_IDGenInput3" value=""/>
+                            <m:Input id="_IDGenInput3" value="{oModel>/locatie}"/>
                         </f:content>
                     </f:SimpleForm>
 
@@ -45,22 +45,22 @@
                     >
                         <f:content>
                             <m:Label id="_IDGenLabel12" text="Name"/>
-                            <m:Input id="_IDGenInput12" value=""/>
+                            <m:Input id="_IDGenInput12" value="{sessionModel>/naam}" />
 
                             <m:Label id="_IDGenLabel20" text="Type"/>
-                            <m:Input id="_IDGenInput20" value=""/>
+                            <m:Input id="_IDGenInput20" value="{sessionModel>/type}"/>
 
                             <m:Label id="_IDGenLabel21" text="Description"/>
-                            <m:Input id="_IDGenInput21" value=""/>
+                            <m:Input id="_IDGenInput21" value="{sessionModel>/beschrijving}"/>
 
                             <m:Label id="_IDGenLabel22" text="Speaker"/>
-                            <m:Input id="_IDGenInput22" value=""/>
+                            <m:Input id="_IDGenInput22" value="{sessionModel>/spreker}"/>
 
                             <m:Label id="_IDGenLabel31" text="Date"/>
-                            <m:DatePicker id="_IDGenDatePicker31" value=""/>
+                            <m:DatePicker id="_IDGenDatePicker31" value="{sessionModel>/datum}"/>
 
                             <m:Label id="_IDGenLabel41" text="Room"/>
-                            <m:Input id="_IDGenInput41" value=""/>
+                            <m:Input id="_IDGenInput41" value="{sessionModel>/lokaalnummer}"/>
                         </f:content>
                     </f:SimpleForm>
             

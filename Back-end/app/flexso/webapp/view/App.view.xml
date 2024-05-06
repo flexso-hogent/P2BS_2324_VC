@@ -74,7 +74,7 @@
 				<HBox id="eventsHBox" justifyContent="SpaceAround" class="sapUiSmallMarginBottom" items="{path: '/Events'}">
 					<VBox id="_IDGenVBox3" width="25%" >
 						<Image id="_IDGenImage2" 
-                            src="pictures/start.png" 
+                            src="pictures/AI.png" 
                             width="auto" 
                             alt="{naam}" 
                             press="onEventClick" />
@@ -84,7 +84,7 @@
 					</VBox>
 					<VBox id="_IDGenVBox4" width="25%">
 						<Image id="_IDGenImage3" 
-                            src="pictures/start.png" 
+                            src="pictures/machinelearning.png" 
                             width="auto" 
                             alt="{naam}" 
                             press="onEventClick" />
@@ -94,7 +94,7 @@
 					</VBox>
 					<VBox id="_IDGenVBox5" width="25%" >
 						<Image id="_IDGenImage4" 
-                            src="pictures/start.png" 
+                            src="pictures/datascience.png" 
                             width="auto" 
                             alt="{naam}" 
                             press="onEventClick" />
@@ -104,7 +104,7 @@
 					</VBox>
 					<VBox id="_IDGenVBox6" width="25%" >
 						<Image id="_IDGenImage5" 
-                            src="pictures/start.png" 
+                            src="pictures/blockchain.png" 
                             width="auto" 
                             alt="{naam}" 
                             press="onEventClick" />
@@ -117,7 +117,7 @@
 				<HBox id="_IDGenHBox20" justifyContent="SpaceAround" class="sapUiSmallMarginBottom" items="{path: '/Events'}">
 					<VBox id="_IDGenVBox30" width="25%" >
 						<Image id="_IDGenImage20" 
-                            src="pictures/start.png" 
+                            src="pictures/AI.png" 
                             width="auto" 
                             alt="{naam}" 
                             press="onEventClick" />
@@ -127,7 +127,7 @@
 					</VBox>
 					<VBox id="_IDGenVBox40" width="25%" >
 						<Image id="_IDGenImage30" 
-                            src="pictures/start.png" 
+                            src="pictures/machinelearning.png" 
                             width="auto" 
                             alt="{naam}" 
                             press="onEventClick" />
@@ -137,7 +137,7 @@
 					</VBox>
 					<VBox id="_IDGenVBox50" width="25%" >
 						<Image id="_IDGenImage40" 
-                            src="pictures/start.png" 
+                            src="pictures/datascience.png" 
                             width="auto" 
                             alt="{naam}" 
                             press="onEventClick" />
@@ -147,7 +147,7 @@
 					</VBox>
 					<VBox id="_IDGenVBox60" width="25%" >
 						<Image id="_IDGenImage50" 
-                            src="pictures/start.png" 
+                            src="pictures/blockchain.png" 
                             width="auto" 
                             alt="{naam}" 
                             press="onEventClick" />
@@ -160,7 +160,7 @@
 				<HBox id="_IDGenHBox020" justifyContent="SpaceAround" class="sapUiSmallMarginBottom" items="{path: '/Events'}">
 					<VBox id="_IDGenVBox030" width="25%" >
 						<Image id="_IDGenImage020" 
-                            src="pictures/start.png" 
+                            src="pictures/AI.png" 
                             width="auto" 
                             alt="{naam}" 
                             press="onEventClick" />
@@ -170,7 +170,7 @@
 					</VBox>
 					<VBox id="_IDGenVBox040" width="25%" >
 						<Image id="_IDGenImage030" 
-                            src="pictures/start.png" 
+                            src="pictures/machinelearning.png" 
                             width="auto" 
                             alt="{naam}" 
                             press="onEventClick" />
@@ -180,7 +180,7 @@
 					</VBox>
 					<VBox id="_IDGenVBox050" width="25%" >
 						<Image id="_IDGenImage040" 
-                            src="pictures/start.png" 
+                            src="pictures/datascience.png" 
                             width="auto" 
                             alt="{naam}" 
                             press="onEventClick" />
@@ -190,7 +190,7 @@
 					</VBox>
 					<VBox id="_IDGenVBox060" width="25%" >
 						<Image id="_IDGenImage050" 
-                            src="pictures/start.png" 
+                            src="pictures/blockchain.png" 
                             width="auto" 
                             alt="{naam}" 
                             press="onEventClick" />
@@ -199,7 +199,7 @@
                         <Text id="_IDGenText022" text="{locatie}" />
 					</VBox>
 				</HBox>
-			<!--	 
+				 
 		    <Table
                 id="EventsTable"
                 inset="false"
@@ -237,7 +237,7 @@
                 </items>
 
             </Table>
-           -->
+           
 		</content>	
         </Page>
     </App>

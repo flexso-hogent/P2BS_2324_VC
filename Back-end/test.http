@@ -21,5 +21,9 @@ Content-Type: application/json
 
 {"mail": 101, "voornaam": "Joe"}
 
+###
 
+POST http://localhost:4004/odata/v4/event/Events?
+
+{"naam": "AI test", "beschrijving": "AI is een test", "datum": "2024-07-20T10:00:00.000Z", "locatie": "Hasselt"}
 

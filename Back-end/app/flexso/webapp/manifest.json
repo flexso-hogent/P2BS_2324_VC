@@ -1,47 +1,41 @@
 {
-    "_version": "1.59.0",
-    "sap.app": {
-      "id": "flexso",
-      "type": "application",
-      "i18n": "i18n/i18n.properties",
-      "applicationVersion": {
-        "version": "0.0.1"
-      },
-      "title": "{{appTitle}}",
-      "description": "{{appDescription}}",
-      "resources": "resources.json",
-      "sourceTemplate": {
-        "id": "@sap/generator-fiori:basic",
-        "version": "1.13.2",
-        "toolsId": "7519e3e7-b9e5-48a8-902f-5d2e172eade2"
-      },
-      "dataSources": {
-        "mainService": {
-          "uri": "/odata/v4/event/",
-          "type": "OData",
-          "settings": {
-            "annotations": [],
-            "odataVersion": "4.0"
-          }
+  "_version": "1.59.0",
+  "sap.app": {
+    "id": "flexso",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.13.2",
+      "toolsId": "7519e3e7-b9e5-48a8-902f-5d2e172eade2"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/odata/v4/event/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "4.0"
         }
       }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
     },
-<<<<<<< HEAD
-    "sap.ui": {
-      "technology": "UI5",
-      "icons": {
-        "icon": "",
-        "favIcon": "",
-        "phone": "",
-        "phone@2": "",
-        "tablet": "",
-        "tablet@2": ""
-      },
-      "deviceTypes": {
-        "desktop": true,
-        "tablet": true,
-        "phone": true
-=======
     "deviceTypes": {
       "desktop": true,
       "tablet": true,
@@ -51,7 +45,7 @@
   "sap.ui5": {
     "flexEnabled": true,
     "dependencies": {
-      "minUI5Version": "1.60.0",
+      "minUI5Version": "1.123.1",
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
@@ -60,8 +54,7 @@
         "sap.ui.comp": {},
         "sap.ui.generic.app": {},
         "sap.ui.table": {},
-        "sap.ushell": {},
-        "sap.uxap": {}
+        "sap.ushell": {}
       }
     },
     "contentDensities": {
@@ -75,7 +68,7 @@
           "bundleName": "flexso.i18n.i18n"
         }
       },
-      "eventModel": {
+      "": {
         "dataSource": "mainService",
         "preload": true,
         "settings": {
@@ -95,27 +88,26 @@
     },
     "routing": {
       "config": {
-        "routerClass": "sap.f.routing.Router",
-        "type": "View",
+        "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
-        "path": "flexso.view",
-        "controlId": "flexibleColumnLayout",
-        "transition": "slide",
-        "bypassed": {
-          "target": "TargetApp"
-        },
-        "async": true
+        "async": true,
+        "viewPath": "flexso.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
       },
       "routes": [
         {
-          "pattern": ":layout:",
-          "name": "list",
-          "target": ["list", "detail"]
+          "name": "RouteApp",
+          "pattern": ":?query:",
+          "target": [
+            "TargetApp"
+          ]
         },
         {
-          "pattern": "detail/{eventID}/{layout}",
-          "name": "detail",
-          "target": ["list", "detail"]
+          "name": "RouteEvent",
+          "pattern": "Event/{eventID}",
+          "target": ["TargetEvent"]
         }
       ],
       "targets": {
@@ -126,121 +118,19 @@
           "viewId": "App",
           "viewName": "App"
         },
-        "list": {
-          "name": "List",
-          "controlAggregation": "beginColumnPages"
-        },
-        "detail": {
-          "name": "Detail",
-          "controlAggregation": "midColumnPages"
+        "TargetEvent": {
+          "viewType": "XML",
+          "viewPath": "flexso.view",
+          "viewName": "List",
+          "viewId": "List"
         }
       }
     },
     "rootView": {
-      "viewName": "flexso.view.Account",
+      "viewName": "flexso.view.App",
       "type": "XML",
       "async": true,
-      "id": "fcl"
+      "id": "App"
     }
   }
 }
-
-        "sap.ushell": {}
->>>>>>> 0ab32fe (a bit of the flexible column layout)
-      }
-    },
-    "sap.ui5": {
-      "flexEnabled": true,
-      "dependencies": {
-        "minUI5Version": "1.123.1",
-        "libs": {
-          "sap.m": {},
-          "sap.ui.core": {},
-          "sap.f": {},
-          "sap.suite.ui.generic.template": {},
-          "sap.ui.comp": {},
-          "sap.ui.generic.app": {},
-          "sap.ui.table": {},
-          "sap.ushell": {},
-          "sap.ui.layout": {}
-        }
-      },
-      "contentDensities": {
-        "compact": true,
-        "cozy": true
-      },
-      "models": {
-        "i18n": {
-          "type": "sap.ui.model.resource.ResourceModel",
-          "settings": {
-            "bundleName": "flexso.i18n.i18n"
-          }
-        },
-        "": {
-          "dataSource": "mainService",
-          "preload": true,
-          "settings": {
-            "synchronizationMode": "None",
-            "operationMode": "Server",
-            "autoExpandSelect": true,
-            "earlyRequests": true
-          }
-        }
-      },
-      "resources": {
-        "css": [
-          {
-            "uri": "css/style.css"
-          }
-        ]
-      },
-      "routing": {
-        "config": {
-          "routerClass": "sap.m.routing.Router",
-          "viewType": "XML",
-          "async": true,
-          "viewPath": "flexso.view",
-          "controlAggregation": "pages",
-          "controlId": "app",
-          "clearControlAggregation": false
-        },
-        "routes": [
-          {
-            "name": "RouteApp",
-            "pattern": ":?query:",
-            "target": [
-              "TargetApp"
-            ]
-          },
-          {
-            "name": "RouteEvent",
-            "pattern": "Event/{eventID}",
-            "target": ["TargetEvent"]
-          }
-        ],
-        "targets": {
-          "TargetApp": {
-            "viewType": "XML",
-            "transition": "slide",
-            "clearControlAggregation": false,
-            "viewId": "App",
-            "viewName": "App"
-          },
-          "TargetEvent": {
-            "viewType": "XML",
-            "viewPath": "flexso.view",
-            "viewName": "Overview",
-            "viewId": "Overview"
-          }
-        }
-      },
-      "rootView": {
-        "viewName": "flexso.view.EventManager",
-        "type": "XML",
-        "controllerName": "flexso.controller.EventManager",
-        "async": true,
-        "id": ""
-      }
-    }
-  }
-  
