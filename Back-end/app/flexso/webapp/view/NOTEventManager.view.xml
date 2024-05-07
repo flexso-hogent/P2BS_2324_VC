@@ -1,0 +1,89 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:smartForm="sap.ui.comp.smartform"
+    xmlns:smartField="sap.ui.comp.smartfield"
+    controllerName="flexso.controller.NOTEventManager">
+
+    <m:Page id="EventManager" title="Event Management">
+        <m:content>
+            <m:VBox id="_IDGenVBox1">
+
+                <smartForm:SmartForm
+                    id="eventSmartForm"
+                    title="Add New Event"
+                    editTogglable="true">
+                    
+                    <smartForm:Group id="_IDGenGroup1" title="Event Details">
+                        <smartForm:GroupElement id="_IDGenGroupElement1" label="Event Name">
+                            <smartField:SmartField id="_IDGenSmartField1" 
+                                value="{/newEvent/naam}"
+                                editable="true"/>
+                        </smartForm:GroupElement>
+                        
+                        <smartForm:GroupElement id="_IDGenGroupElement2" label="Description">
+                            <smartField:SmartField id="_IDGenSmartField2" 
+                                value="{/newEvent/beschrijving}"
+                                editable="true"/>
+                        </smartForm:GroupElement>
+
+                        <smartForm:GroupElement id="_IDGenGroupElement3" label="Date">
+                            <smartField:SmartField id="_IDGenSmartField3" 
+                                value="{/newEvent/datum}"
+                                editable="true"/>
+                        </smartForm:GroupElement>
+
+                        <smartForm:GroupElement id="_IDGenGroupElement4" label="Location">
+                            <smartField:SmartField id="_IDGenSmartField4" 
+                                value="{/newEvent/locatie}"
+                                editable="true"/>
+                        </smartForm:GroupElement>
+                    </smartForm:Group>
+                </smartForm:SmartForm>
+
+                <m:Table
+                    id="sessionsTable"
+                    items="{/newEvent/sessies}">
+                    <m:columns>
+                        <m:Column id="_IDGenColumn1">
+                            <m:Text id="_IDGenText1" text="Session Name"/>
+                        </m:Column>
+                        <m:Column id="_IDGenColumn2">
+                            <m:Text id="_IDGenText2" text="Description"/>
+                        </m:Column>
+                        <m:Column id="_IDGenColumn3">
+                            <m:Text id="_IDGenText3" text="Speaker"/>
+                        </m:Column>
+                        <m:Column id="_IDGenColumn4">
+                            <m:Text id="_IDGenText4" text="Date"/>
+                        </m:Column>
+                        <m:Column id="_IDGenColumn5">
+                            <m:Text id="_IDGenText5" text="Room Number"/>
+                        </m:Column>
+                    </m:columns>
+                    <m:items>
+                        <m:ColumnListItem id="_IDGenColumnListItem1">
+                            <m:cells>
+                                <m:Input id="_IDGenInput1" value="{naam}" editable="true"/>
+                                <m:Input id="_IDGenInput2" value="{beschrijving}" editable="true"/>
+                                <m:Input id="_IDGenInput3" value="{spreker}" editable="true"/>
+                                <m:DatePicker id="_IDGenDatePicker1" value="{datum}" editable="true"/>
+                                <m:Input id="_IDGenInput4" value="{lokaalnummer}" editable="true"/>
+                            </m:cells>
+                        </m:ColumnListItem>
+                    </m:items>
+                </m:Table>
+
+                <m:Button id="_IDGenButton1" 
+                    text="Add Session"
+                    press=".onAddSession"/>
+                    
+                <m:Button id="_IDGenButton2" 
+                    text="Create Event"
+                    press=".onSaveEvent"/>
+
+            </m:VBox>
+        </m:content>
+    </m:Page>
+
+</mvc:View>

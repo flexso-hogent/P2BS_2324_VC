@@ -1,5 +1,6 @@
+<!--
 <mvc:View controllerName="flexso.controller.Startpage"
-<<<<<<< HEAD
+
     xmlns:mvc="sap.ui.core.mvc" 
     displayBlock="true"
     xmlns="sap.m">
@@ -26,7 +27,8 @@
 	</Page>
     </App>
 </mvc:View>
-=======
+-->
+<mvc:View controllerName="flexso.controller.Startpage"    
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns="sap.m">
@@ -75,5 +77,3 @@
     </App>
 
 </mvc:View>
-
->>>>>>> 685f207 (New files added)

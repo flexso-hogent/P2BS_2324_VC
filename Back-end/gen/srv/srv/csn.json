@@ -1,0 +1,263 @@
+{
+  "namespace": "my.events",
+  "definitions": {
+    "my.events.Events": {
+      "kind": "entity",
+      "elements": {
+        "eventID": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "naam": {
+          "type": "cds.String"
+        },
+        "beschrijving": {
+          "type": "cds.String"
+        },
+        "datum": {
+          "type": "cds.DateTime"
+        },
+        "locatie": {
+          "type": "cds.String"
+        },
+        "sessies": {
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "my.events.Sessions",
+          "on": [
+            {
+              "ref": [
+                "sessies",
+                "event"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$self"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "my.events.Sessions": {
+      "kind": "entity",
+      "elements": {
+        "sessieID": {
+          "key": true,
+          "type": "cds.Int16"
+        },
+        "naam": {
+          "type": "cds.String"
+        },
+        "type": {
+          "type": "cds.String"
+        },
+        "beschrijving": {
+          "type": "cds.String"
+        },
+        "spreker": {
+          "type": "cds.String"
+        },
+        "datum": {
+          "type": "cds.DateTime"
+        },
+        "lokaalnummer": {
+          "type": "cds.String"
+        },
+        "event": {
+          "type": "cds.Association",
+          "target": "my.events.Events",
+          "keys": [
+            {
+              "ref": [
+                "eventID"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "my.events.Users": {
+      "kind": "entity",
+      "elements": {
+        "mail": {
+          "key": true,
+          "type": "cds.String",
+          "length": 100,
+          "notNull": true
+        },
+        "voornaam": {
+          "type": "cds.String",
+          "length": 50
+        },
+        "achternaam": {
+          "type": "cds.String",
+          "length": 50
+        },
+        "bedrijf": {
+          "type": "cds.String",
+          "length": 100
+        },
+        "titel": {
+          "type": "cds.String",
+          "length": 50
+        },
+        "stad": {
+          "type": "cds.String",
+          "length": 50
+        },
+        "rol": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "EventService": {
+      "@source": "srv/cat-service.cds",
+      "kind": "service"
+    },
+    "EventService.Events": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "my.events.Events"
+          ]
+        }
+      },
+      "elements": {
+        "eventID": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "naam": {
+          "type": "cds.String"
+        },
+        "beschrijving": {
+          "type": "cds.String"
+        },
+        "datum": {
+          "type": "cds.DateTime"
+        },
+        "locatie": {
+          "type": "cds.String"
+        },
+        "sessies": {
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "EventService.Sessions",
+          "on": [
+            {
+              "ref": [
+                "sessies",
+                "event"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$self"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "EventService.Sessions": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "my.events.Sessions"
+          ]
+        }
+      },
+      "elements": {
+        "sessieID": {
+          "key": true,
+          "type": "cds.Int16"
+        },
+        "naam": {
+          "type": "cds.String"
+        },
+        "type": {
+          "type": "cds.String"
+        },
+        "beschrijving": {
+          "type": "cds.String"
+        },
+        "spreker": {
+          "type": "cds.String"
+        },
+        "datum": {
+          "type": "cds.DateTime"
+        },
+        "lokaalnummer": {
+          "type": "cds.String"
+        },
+        "event": {
+          "type": "cds.Association",
+          "target": "EventService.Events",
+          "keys": [
+            {
+              "ref": [
+                "eventID"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "EventService.Users": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "my.events.Users"
+          ]
+        }
+      },
+      "elements": {
+        "mail": {
+          "key": true,
+          "type": "cds.String",
+          "length": 100,
+          "notNull": true
+        },
+        "voornaam": {
+          "type": "cds.String",
+          "length": 50
+        },
+        "achternaam": {
+          "type": "cds.String",
+          "length": 50
+        },
+        "bedrijf": {
+          "type": "cds.String",
+          "length": 100
+        },
+        "titel": {
+          "type": "cds.String",
+          "length": 50
+        },
+        "stad": {
+          "type": "cds.String",
+          "length": 50
+        },
+        "rol": {
+          "type": "cds.String"
+        }
+      }
+    }
+  },
+  "meta": {
+    "creator": "CDS Compiler v4.8.0",
+    "flavor": "inferred"
+  },
+  "$version": "2.0"
+}

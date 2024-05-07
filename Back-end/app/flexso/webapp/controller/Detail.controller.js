@@ -16,11 +16,12 @@ sap.ui.define([
 		},
 
 		_onProductMatched: function (oEvent) {// bind with correct item
-			this._event = oEvent.getParameter("arguments").eventID || this._event|| "0"; 
+			this._event = oEvent.getParameter("arguments").eventID || this._event|| "event(1)"; 
 			this.getView().bindElement({
-				path: "/Events" + "(eventID=" + this._event.slice(0,-1).slice(7)+ ")",
+				path: "/" + this._event,
 				model: "eventModel"
 			});
+
 		},
 
 		onExit: function () {

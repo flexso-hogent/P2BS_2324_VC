@@ -13,7 +13,7 @@ entity Events {
 entity Sessions {
   key sessieID     : Int16;
       naam         : String;
-      type         : String;
+      //type         : String;
       beschrijving : String;
       spreker      : String;
       datum        : DateTime;

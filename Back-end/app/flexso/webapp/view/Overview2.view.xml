@@ -1,0 +1,110 @@
+<mvc:View 
+	displayBlock="true"
+	controllerName="sap.f.flexso.controller.Overview"
+	xmlns="sap.uxap" 
+	xmlns:m="sap.m" 
+	xmlns:f="sap.f" 
+	xmlns:form="sap.ui.layout.form" 
+	xmlns:mvc="sap.ui.core.mvc">
+    <ObjectPageLayout id="Overview" showTitleInHeaderContent="true" alwaysShowContentHeader="false">
+        <!-- Event List in Header 
+        <headerTitle>
+            <ObjectPageDynamicHeaderTitle id="HeaderTitle">
+				<actions></actions>
+                
+                <m:List id="_IDGenList1" items="{path: '/Events'}" itemPress="onEventPress">
+                    <m:StandardListItem id="_IDGenStandardListItem1" title="{eventName}" />
+                </m:List>
+            </ObjectPageDynamicHeaderTitle>
+        </headerTitle>-->
+
+        <!-- Selected Event Information 
+        <headerContent>
+            <m:VBox id="_IDGenVBox1">
+                <m:Title id="_IDGenTitle1" text="Selected Event: {naam}" />
+                <m:Text id="_IDGenText1" text="Event Details: {beschrijving}" />
+            </m:VBox>
+        </headerContent>-->
+
+        <!-- Sections for Additional Information
+        <sections> -->
+            <!-- Sessions for Selected Event -->
+
+		<headerContent>
+					<m:FlexBox id="_IDGenFlexBox1" wrap="Wrap" fitContainer="true" alignItems="Stretch">
+						
+						
+						<m:VBox id="_IDGenVBox1" justifyContent="Center" class="sapUiSmallMarginEnd">
+							<m:Label id="_IDGenLabel1" text="Event"/>
+							<m:Text id="_IDGenText6" text="{events>naam}"/>
+						</m:VBox>
+						<m:VBox id="_IDGenVBox2" justifyContent="Center" class="sapUiSmallMarginEnd">
+							<m:Label id="_IDGenLabel2" text="datum"/>
+							<m:Text id="_IDGenText7" text="{events>datum}"/>
+						</m:VBox>
+						<m:VBox id="_IDGenVBox3" justifyContent="Center" class="sapUiSmallMarginEnd">
+							<m:Label id="_IDGenLabel3" text="Price"/>
+							<m:Text id="_IDGenText8" text="{events>datum}"/>
+						</m:VBox>
+					</m:FlexBox>
+				</headerContent>
+
+		<sections>
+			<ObjectPageSection id="_IDGenObjectPageSection1" title="Sessions">
+				<subSections>
+					<ObjectPageSubSection id="_IDGenObjectPageSubSection1">
+						<blocks>
+							<form:SimpleForm id="_IDGenSimpleForm1"
+								maxContainerCols="2"
+								editable="false"
+								layout="ResponsiveGridLayout"
+								labelSpanL="12"
+								labelSpanM="12"
+								emptySpanL="0"
+								emptySpanM="0"
+								columnsL="1"
+								columnsM="1">
+								<form:content>
+									<m:Label id="_IDGenLabel4" text="name"/>
+									<m:Text id="_IDGenText9" text="{Sessions>naam}"/>
+									<m:Label id="_IDGenLabel5" text="Description"/>
+									<m:Text id="_IDGenText10" text="{Sessions>beschrijving}"/>
+									<m:Label id="_IDGenLabel6" text="Speaker"/>
+									<m:Text id="_IDGenText11" text="{Sessions>spreker}"/>
+								</form:content>
+							</form:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection id="_IDGenObjectPageSection2" title="Suppliers">
+				<subSections>
+					<ObjectPageSubSection id="_IDGenObjectPageSubSection2">
+						<blocks>
+							<m:Table
+								id="eventsTable"
+								mode="SingleSelectMaster"
+								itemPress="handleItemPress"
+								items="{path : '/Sessions'}">
+								<m:columns>
+									<m:Column id="_IDGenColumn1" />
+								</m:columns>
+								<m:items>
+									<m:ColumnListItem id="_IDGenColumnListItem1" type="Navigation">
+										<m:cells>
+											<m:ObjectIdentifier id="_IDGenObjectIdentifier1" text="{Sessions>naam}" />
+										</m:cells>
+									</m:ColumnListItem>
+								</m:items>
+							</m:Table>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+
+            
+       
+    </ObjectPageLayout>
+</mvc:View>

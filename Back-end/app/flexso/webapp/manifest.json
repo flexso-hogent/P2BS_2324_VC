@@ -33,17 +33,7 @@
       "phone": true
     }
   },
-  "sap.app": {
-    "dataSources": {
-      "mainService": {
-        "uri": "/odata/v4/event/",
-        "type": "OData",
-        "settings": {
-          "odataVersion": "4.0"
-        }
-      }
-    }
-  },
+
   "sap.ui5": {
     "flexEnabled": true,
     "dependencies": {
@@ -125,8 +115,8 @@
         "TargetEvent": {
           "viewType": "XML",
           "viewPath": "flexso.view",
-          "viewName": "Event",
-          "viewId": "Event"
+          "viewName": "Detail",
+          "viewId": "Detail"
         },
         "TargetEventList": {
           "viewType": "XML",
@@ -145,7 +135,7 @@
       }
     },
     "rootView": {
-      "viewName": "flexso.view.EventManager",
+      "viewName": "flexso.view.App",
       "type": "XML",
       "async": true,
       "id": ""

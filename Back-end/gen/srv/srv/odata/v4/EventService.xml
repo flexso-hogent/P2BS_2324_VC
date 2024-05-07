@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+    <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+  </edmx:Reference>
+  <edmx:DataServices>
+    <Schema Namespace="EventService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityContainer Name="EntityContainer">
+        <EntitySet Name="Events" EntityType="EventService.Events">
+          <NavigationPropertyBinding Path="sessies" Target="Sessions"/>
+        </EntitySet>
+        <EntitySet Name="Sessions" EntityType="EventService.Sessions">
+          <NavigationPropertyBinding Path="event" Target="Events"/>
+        </EntitySet>
+        <EntitySet Name="Users" EntityType="EventService.Users"/>
+      </EntityContainer>
+      <EntityType Name="Events">
+        <Key>
+          <PropertyRef Name="eventID"/>
+        </Key>
+        <Property Name="eventID" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="naam" Type="Edm.String"/>
+        <Property Name="beschrijving" Type="Edm.String"/>
+        <Property Name="datum" Type="Edm.DateTimeOffset"/>
+        <Property Name="locatie" Type="Edm.String"/>
+        <NavigationProperty Name="sessies" Type="Collection(EventService.Sessions)" Partner="event"/>
+      </EntityType>
+      <EntityType Name="Sessions">
+        <Key>
+          <PropertyRef Name="sessieID"/>
+        </Key>
+        <Property Name="sessieID" Type="Edm.Int16" Nullable="false"/>
+        <Property Name="naam" Type="Edm.String"/>
+        <Property Name="type" Type="Edm.String"/>
+        <Property Name="beschrijving" Type="Edm.String"/>
+        <Property Name="spreker" Type="Edm.String"/>
+        <Property Name="datum" Type="Edm.DateTimeOffset"/>
+        <Property Name="lokaalnummer" Type="Edm.String"/>
+        <NavigationProperty Name="event" Type="EventService.Events" Partner="sessies">
+          <ReferentialConstraint Property="event_eventID" ReferencedProperty="eventID"/>
+        </NavigationProperty>
+        <Property Name="event_eventID" Type="Edm.Int32"/>
+      </EntityType>
+      <EntityType Name="Users">
+        <Key>
+          <PropertyRef Name="mail"/>
+        </Key>
+        <Property Name="mail" Type="Edm.String" MaxLength="100" Nullable="false"/>
+        <Property Name="voornaam" Type="Edm.String" MaxLength="50"/>
+        <Property Name="achternaam" Type="Edm.String" MaxLength="50"/>
+        <Property Name="bedrijf" Type="Edm.String" MaxLength="100"/>
+        <Property Name="titel" Type="Edm.String" MaxLength="50"/>
+        <Property Name="stad" Type="Edm.String" MaxLength="50"/>
+        <Property Name="rol" Type="Edm.String"/>
+      </EntityType>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>
