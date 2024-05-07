@@ -1,0 +1,43 @@
+<mvc:View
+    controllerName="flexso.controller.SessionManager"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:m="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+>
+    <m:App id="create_session">
+        <m:Page id="_IDGenPage1"
+            title="Add Sessions"
+            showNavButton="true"
+            navButtonPress=".onNavBack"
+        >
+            <f:SimpleForm id="_IDGenSimpleForm1"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                title="Add New Session"
+            >
+                <f:content>
+                    <m:Label id="_IDGenLabel1" text="Name"/>
+                    <m:Input id="sessionName" value="{sessionModel>/name}"/>
+
+                    <m:Label id="_IDGenLabel2" text="Type"/>
+                    <m:Input id="sessionType" value="{sessionModel>/type}" />
+
+                    <m:Label id="_IDGenLabel3" text="Description"/>
+                    <m:Input id="sessionDescription" value="{sessionModel>/description}" />
+
+                    <m:Label id="_IDGenLabel4" text="Speaker"/>
+                    <m:Input id="sessionSpeaker" value="{sessionModel>/speaker}" />
+
+                    <m:Label id="_IDGenLabel5" text="Date"/>
+                    <m:DatePicker id="sessionDate" value="{sessionModel>/date}" />
+
+                    <m:Label id="_IDGenLabel6" text="Room"/>
+                    <m:Input id="sessionRoom" value="{sessionModel>/room}" />
+                </f:content>
+            </f:SimpleForm>
+                    <m:Button id="_IDGenButton1" text="Save Session" press=".onSaveSession"/>
+        </m:Page>
+    </m:App>
+</mvc:View>

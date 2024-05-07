@@ -7,116 +7,35 @@
     xmlns:f="sap.ui.layout.form"
     displayBlock="true"
 >
-    <m:App id="appli">
-        <m:Page id="vbn"
-            title="Create Event"
-            showNavButton="true"
-            navButtonPress=".onNavBack"
+    <m:App id="create_event">
+        <m:Page id="_IDGenPage1"
+        title="Create Event"
+        showNavButton="true"
+        navButtonPress=".onNavBack"
+    >
+        <f:SimpleForm
+            id="eventForm"
+            editable="true"
+            layout="ResponsiveGridLayout"
+            title="New Event"
         >
-            <m:content>
-                <m:VBox id="_IDGenVBox1">
-                    
-                    <f:SimpleForm
-                        id="eventForm"
-                        editable="true"
-                        layout="ResponsiveGridLayout"
-                        title="New Event"
-                    >
-                        <f:content>
-                            <m:Label id="_IDGenLabel1" text="Name"/>
-                            <m:Input id="_IDGenInput1" value="{oModel>/naam}"/>
+            <f:content>
+                <m:Label id="_IDGenLabel1" text="Name"/>
+                <m:Input id="eventName" value="{eventModel>/name}"/>
 
-                            <m:Label id="_IDGenLabel2" text="Description"/>
-                            <m:Input id="_IDGenInput2" value="{oModel>/beschrijving}"/>
+                <m:Label id="_IDGenLabel2" text="Description"/>
+                <m:Input id="eventDescription" value="{eventModel>/description}"/>
 
-                            <m:Label id="_IDGenLabel3" text="Date"/>
-                            <m:DatePicker id="_IDGenDatePicker1" value="{oModel>/datum}"/>
+                <m:Label id="_IDGenLabel3" text="Date"/>
+                <m:DatePicker id="eventDate" value="{eventModel>/date}"/>
 
-                            <m:Label id="_IDGenLabel4" text="Location"/>
-                            <m:Input id="_IDGenInput3" value="{oModel>/locatie}"/>
-                        </f:content>
-                    </f:SimpleForm>
-
-                    <f:SimpleForm
-                        id="sessionsForm"
-                        editable="true"
-                        layout="ResponsiveGridLayout"
-                        title="Sessions"
-                    >
-                        <f:content>
-                            <m:Label id="_IDGenLabel12" text="Name"/>
-                            <m:Input id="_IDGenInput12" value="{sessionModel>/naam}" />
-
-                            <m:Label id="_IDGenLabel20" text="Type"/>
-                            <m:Input id="_IDGenInput20" value="{sessionModel>/type}"/>
-
-                            <m:Label id="_IDGenLabel21" text="Description"/>
-                            <m:Input id="_IDGenInput21" value="{sessionModel>/beschrijving}"/>
-
-                            <m:Label id="_IDGenLabel22" text="Speaker"/>
-                            <m:Input id="_IDGenInput22" value="{sessionModel>/spreker}"/>
-
-                            <m:Label id="_IDGenLabel31" text="Date"/>
-                            <m:DatePicker id="_IDGenDatePicker31" value="{sessionModel>/datum}"/>
-
-                            <m:Label id="_IDGenLabel41" text="Room"/>
-                            <m:Input id="_IDGenInput41" value="{sessionModel>/lokaalnummer}"/>
-                        </f:content>
-                    </f:SimpleForm>
-            
-                    <!--
-                    <m:Table
-                        id="sessionsTable"
-                        headerText="Sessions"
-
-                    >
-                        <m:columns>
-                            <m:Column id="_IDGenColumn1">
-                                <m:Text id="_IDGenText1" text="Name"/>
-                            </m:Column>
-                            <m:Column id="_IDGenColumn12">
-                                <m:Text id="_IDGenText12" text="Type"/>
-                            </m:Column>
-                            <m:Column id="_IDGenColumn2">
-                                <m:Text id="_IDGenText2" text="Description"/>
-                            </m:Column>
-                            <m:Column id="_IDGenColumn3">
-                                <m:Text id="_IDGenText3" text="Speaker"/>
-                            </m:Column>
-                            <m:Column id="_IDGenColumn4">
-                                <m:Text id="_IDGenText4" text="Date"/>
-                            </m:Column>
-                            <m:Column id="_IDGenColumn5">
-                                <m:Text id="_IDGenText5" text="Room"/>
-                            </m:Column>
-                        </m:columns>
-                        <m:items>
-                            <m:ColumnListItem id="_IDGenColumnListItem1">
-                                <m:cells>
-                                    <m:Input id="_IDGenInput4" value="" editable="true"/>
-                                    <m:Input id="_IDGenInput40" value="" editable="true"/>
-                                    <m:Input id="_IDGenInput5" value="" editable="true"/>
-                                    <m:Input id="_IDGenInput6" value="" editable="true"/>
-                                    <m:DatePicker id="_IDGenDatePicker2" value="" editable="true"/>
-                                    <m:Input id="_IDGenInput7" value="" editable="true"/>
-                                </m:cells>
-                            </m:ColumnListItem>
-                        </m:items>
-                    </m:Table>
-                    -->
-
-                    <m:HBox id="_IDGenHBox1">
-                        <m:Button id="_IDGenButton1"
-                            text="Add session"
-                            press=".onAddSession"
-                        />
-                        <m:Button id="_IDGenButton2"
-                            text="Save Event"
-                            press=".onSaveEvent"
-                        />
-                    </m:HBox>
-                </m:VBox>
-            </m:content>
-        </m:Page>
+                <m:Label id="_IDGenLabel4" text="Location"/>
+                <m:Input id="eventLocation" value="{eventModel>/location}"/>
+            </f:content>
+        </f:SimpleForm>
+        
+        <m:Button id="_IDGenButton1" text="Save Event" press=".onSaveEvent"/>
+        <m:Button id="_IDGenButton2" text="Add Sessions" press=".onAddSessions"/>
+    </m:Page>
     </m:App>
 </mvc:View>

@@ -24,6 +24,7 @@ Content-Type: application/json
 ###
 
 POST http://localhost:4004/odata/v4/event/Events?
+Content-Type: application/json
 
-{"naam": "AI test", "beschrijving": "AI is een test", "datum": "2024-07-20T10:00:00.000Z", "locatie": "Hasselt"}
+{"eventID": 5, "naam": "AI test", "beschrijving": "AI is een test", "datum": "2024-07-20T10:00:00.000Z", "locatie": "Hasselt"}
 

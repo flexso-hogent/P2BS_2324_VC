@@ -12,8 +12,7 @@
     "resources": "resources.json",
     "sourceTemplate": {
       "id": "@sap/generator-fiori:basic",
-      "version": "1.13.2",
-      "toolsId": "7519e3e7-b9e5-48a8-902f-5d2e172eade2"
+      "version": "1.13.2"
     },
     "dataSources": {
       "mainService": {
@@ -28,18 +27,21 @@
   },
   "sap.ui": {
     "technology": "UI5",
-    "icons": {
-      "icon": "",
-      "favIcon": "",
-      "phone": "",
-      "phone@2": "",
-      "tablet": "",
-      "tablet@2": ""
-    },
     "deviceTypes": {
       "desktop": true,
       "tablet": true,
       "phone": true
+    }
+  },
+  "sap.app": {
+    "dataSources": {
+      "mainService": {
+        "uri": "/odata/v4/event/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "4.0"
+        }
+      }
     }
   },
   "sap.ui5": {
@@ -49,12 +51,7 @@
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
-        "sap.f": {},
-        "sap.suite.ui.generic.template": {},
-        "sap.ui.comp": {},
-        "sap.ui.generic.app": {},
-        "sap.ui.table": {},
-        "sap.ushell": {}
+        "sap.f": {}
       }
     },
     "contentDensities": {
@@ -100,37 +97,58 @@
         {
           "name": "RouteApp",
           "pattern": ":?query:",
-          "target": [
-            "TargetApp"
-          ]
+          "target": ["TargetApp"]
         },
         {
           "name": "RouteEvent",
           "pattern": "Event/{eventID}",
           "target": ["TargetEvent"]
+        },
+        {
+          "name": "EventList",
+          "pattern": "events",
+          "target": ["TargetEventList"]
+        },
+        {
+          "name": "CreateEvent",
+          "pattern": "create-event",
+          "target": ["TargetCreateEvent"]
         }
       ],
       "targets": {
         "TargetApp": {
           "viewType": "XML",
-          "transition": "slide",
-          "clearControlAggregation": false,
-          "viewId": "App",
-          "viewName": "App"
+          "viewPath": "flexso.view",
+          "viewName": "App",
+          "viewId": "App"
         },
         "TargetEvent": {
           "viewType": "XML",
           "viewPath": "flexso.view",
-          "viewName": "List",
-          "viewId": "List"
+          "viewName": "Event",
+          "viewId": "Event"
+        },
+        "TargetEventList": {
+          "viewType": "XML",
+          "viewPath": "flexso.view",
+          "viewName": "EventList",
+          "viewId": "EventList",
+          "viewLevel": 1
+        },
+        "TargetCreateEvent": {
+          "viewType": "XML",
+          "viewPath": "flexso.view",
+          "viewName": "CreateEvent",
+          "viewId": "CreateEvent",
+          "viewLevel": 2
         }
       }
     },
     "rootView": {
-      "viewName": "flexso.view.App",
+      "viewName": "flexso.view.EventManager",
       "type": "XML",
       "async": true,
-      "id": "App"
+      "id": ""
     }
   }
 }
