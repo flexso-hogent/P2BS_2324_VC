@@ -1,10 +1,10 @@
-sessieID,naam,beschrijving,spreker,datum,lokaalnummer,event_eventID
-1,Introductie tot AI,"Een introductie tot de basisconcepten van kunstmatige intelligentie.",John Doe,2024-06-15T09:00:00Z,A2,1
-2,Toepassingen van ML in de industrie,"Een diepgaande analyse van machine learning-toepassingen in verschillende industrieën.",Jane Smith,2024-06-15T10:00:00Z,A4,1
-3,Machine Learning in de gezondheidszorg,"Een verkenning van machine learning-toepassingen in de medische sector.",Alice Johnson,2024-06-15T10:00:00Z,A1,1
-4,Introductie tot neurale netwerken,"Een overzicht van de basisprincipes en toepassingen van neurale netwerken.",David Brown,2024-06-25T13:00:00Z,B1,2
-5,Praktische toepassingen van deep learning,"Een hands-on workshop over het implementeren van deep learning-modellen.",Emma Wilson,2024-06-25T14:00:00Z,B2,2
-6,Machine Learning Operations (MLOps) best practices,"Een bespreking van best practices voor het beheren van machine learning-modellen in productie.",Michael Lee,2024-06-25T15:00:00Z,B3,2
-7,Big Data-analyse in de zakelijke omgeving,"Een analyse van hoe big data de besluitvorming in bedrijven beïnvloedt.",Sophia Garcia,2024-06-20T10:00:00Z,C1,3
-8,Data Mining in actie,"Een demonstratie van data mining-technieken en -tools.",Daniel Martinez,2024-06-20T11:00:00Z,C2,3
-9,Data Science in de financiële sector,"Een verkenning van data science-toepassingen in de financiële dienstverlening.",Olivia Adams,2024-06-20T12:00:00Z,C3,3
+sessieID,naam,type,beschrijving,spreker,datum,begintijd, eindtijd,lokaalnummer,event_eventID
+1,Introductie tot AI,"Workshop",Een introductie tot de basisconcepten van kunstmatige intelligentie.",John Doe,2024-06-15,09:00:00,11:00:00,A2,1
+2,Toepassingen van ML in de industrie,"Discussion forum",Een diepgaande analyse van machine learning-toepassingen in verschillende industrieën.",Jane Smith,2024-06-15,10:00:00,12:00:00,A4,1
+3,Machine Learning in de gezondheidszorg,"Lezing","Een verkenning van machine learning-toepassingen in de medische sector.",Alice Johnson,2024-06-15,10:00:00,12:00:00,A1,1
+4,Introductie tot neurale netwerken,"Lezing","Een overzicht van de basisprincipes en toepassingen van neurale netwerken.",David Brown,2024-06-25,13:00:00,15:00:00,B1,2
+5,Praktische toepassingen van deep learning,"Workshop","Een hands-on workshop over het implementeren van deep learning-modellen.",Emma Wilson,2024-06-25,14:00:00,16:00:00,B2,2
+6,Machine Learning Operations (MLOps) best practices,"Discussion forum","Een bespreking van best practices voor het beheren van machine learning-modellen in productie.",Michael Lee,2024-06-25,15:00:00,17:00:00,B3,2
+7,Big Data-analyse in de zakelijke omgeving,"Lezing","Een analyse van hoe big data de besluitvorming in bedrijven beïnvloedt.",Sophia Garcia,2024-06-20,10:00:00,12:00:00,C1,3
+8,Data Mining in actie,"Workshop",Een demonstratie van data mining-technieken en -tools.",Daniel Martinez,2024-06-20,11:00:00,13:00:00,C2,3
+9,Data Science in de financiële sector,"Discussion forum","Een verkenning van data science-toepassingen in de financiële dienstverlening.",Olivia Adams,2024-06-20,12:00:00,14:00:00,C3,3

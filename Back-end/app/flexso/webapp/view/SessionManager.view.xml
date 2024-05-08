@@ -1,43 +1,78 @@
 <mvc:View
     controllerName="flexso.controller.SessionManager"
     xmlns:mvc="sap.ui.core.mvc"
-    displayBlock="true"
     xmlns:m="sap.m"
-    xmlns:f="sap.ui.layout.form"
+    xmlns:f="sap.f"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:uxap="sap.uxap"
     xmlns:core="sap.ui.core"
->
-    <m:App id="create_session">
-        <m:Page id="_IDGenPage1"
-            title="Add Sessions"
-            showNavButton="true"
-            navButtonPress=".onNavBack"
-        >
-            <f:SimpleForm id="_IDGenSimpleForm1"
-                editable="true"
-                layout="ResponsiveGridLayout"
-                title="Add New Session"
-            >
-                <f:content>
-                    <m:Label id="_IDGenLabel1" text="Name"/>
-                    <m:Input id="sessionName" value="{sessionModel>/name}"/>
+    id="SessionManager">
+    
+    <uxap:ObjectPageLayout
+        id="ObjectPageLayoutSessions"
+        showTitleInHeaderContent="true"
+        alwaysShowContentHeader="false"
+        preserveHeaderStateOnScroll="false"
+        headerContentPinnable="true"
+        isChildPage="true"
+        upperCaseAnchorBar="false"
+    >
+        <uxap:headerTitle>
+            <uxap:ObjectPageDynamicHeaderTitle id="ObjectPageDynamicHeaderTitle">
+                <uxap:expandedHeading>
+                    <m:Title id="_IDGenTitle1" text="Add Sessions" wrapping="true" class="sapUiSmallMarginEnd"/>
+                </uxap:expandedHeading>
+                <uxap:snappedHeading>
+                    <m:FlexBox id="_IDGenFlexBox1" wrap="Wrap" alignItems="Center">
+                        <m:Title id="_IDGenTitle2" text="{sessionModel>/name}" wrapping="true"/>
+                    </m:FlexBox>
+                </uxap:snappedHeading>
+                <uxap:actions>
+                    <m:Button id="_IDGenButton1"
+                        text="Save session"
+                        type="Emphasized"
+                        press=".onSaveSession"
+                    />
+                </uxap:actions>
+            </uxap:ObjectPageDynamicHeaderTitle>
+        </uxap:headerTitle>
 
-                    <m:Label id="_IDGenLabel2" text="Type"/>
-                    <m:Input id="sessionType" value="{sessionModel>/type}" />
+        <uxap:ObjectPageSection id="_IDGenObjectPageSection1" title="Session Details">
+            <uxap:ObjectPageSubSection id="_IDGenObjectPageSubSection1">
+                <form:SimpleForm id="_IDGenSimpleForm1"
+                    editable="true"
+                    layout="ResponsiveGridLayout"
+                    title="Session details"
+                >
+                    <form:content>
+                        <!-- Fields for Session Details -->
+                        <m:Label id="_IDGenLabel1" text="Name" />
+                        <m:Input id="sessionName" value="{sessionModel>/name}" />
 
-                    <m:Label id="_IDGenLabel3" text="Description"/>
-                    <m:Input id="sessionDescription" value="{sessionModel>/description}" />
+                        <m:Label id="_IDGenLabel2" text="Type" />
+                        <m:Input id="sessionType" value="{sessionModel>/type}" />
 
-                    <m:Label id="_IDGenLabel4" text="Speaker"/>
-                    <m:Input id="sessionSpeaker" value="{sessionModel>/speaker}" />
+                        <m:Label id="_IDGenLabel3" text="Description" />
+                        <m:Input id="sessionDescription" value="{sessionModel>/description}" />
 
-                    <m:Label id="_IDGenLabel5" text="Date"/>
-                    <m:DatePicker id="sessionDate" value="{sessionModel>/date}" />
+                        <m:Label id="_IDGenLabel4" text="Speaker" />
+                        <m:Input id="sessionSpeaker" value="{sessionModel>/speaker}" />
 
-                    <m:Label id="_IDGenLabel6" text="Room"/>
-                    <m:Input id="sessionRoom" value="{sessionModel>/room}" />
-                </f:content>
-            </f:SimpleForm>
-                    <m:Button id="_IDGenButton1" text="Save Session" press=".onSaveSession"/>
-        </m:Page>
-    </m:App>
+                        <m:Label id="_IDGenLabel5" text="Date" />
+                        <m:DatePicker id="sessionDate" value="{sessionModel>/date}" />
+
+                        <m:Label id="_IDGenLabel6" text="Start Time" />
+                        <m:TimePicker id="startTime" value="{sessionModel>/startTime}" />
+
+                        <m:Label id="_IDGenLabel7" text="End Time" />
+                        <m:TimePicker id="endTime" value="{sessionModel>/endTime}" />
+
+                        <m:Label id="_IDGenLabel8" text="Room" />
+                        <m:Input id="sessionRoom" value="{sessionModel>/room}" />
+                    </form:content>
+                </form:SimpleForm>
+            </uxap:ObjectPageSubSection>
+        </uxap:ObjectPageSection>
+    
+    </uxap:ObjectPageLayout>
 </mvc:View>

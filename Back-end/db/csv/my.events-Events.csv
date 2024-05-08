@@ -1,5 +1,5 @@
-eventID,naam,beschrijving,datum,locatie
-1,Conferentie over Kunstmatige Intelligentie,"Een conferentie gewijd aan de nieuwste ontwikkelingen op het gebied van AI.",2024-06-15T09:00:00Z,Gent
-2,Workshop over Machine Learning,"Een praktische workshop om de basis van machine learning te leren.",2024-06-25T13:00:00Z,Gent
-3,Data Science Summit,"Een bijeenkomst van experts om de laatste trends en toepassingen in data science te bespreken.",2024-06-20T10:00:00Z,Aalst
-4,Blockchain Innovatie Summit,"Een conferentie over de nieuwste toepassingen van blockchain-technologie in verschillende industrieën.",2024-07-10T10:00:00Z,Brussel
+eventID,naam,beschrijving,datum,begintijd,eindtijd,locatie
+1,Conferentie over Kunstmatige Intelligentie,"Een conferentie gewijd aan de nieuwste ontwikkelingen op het gebied van AI.",2024-06-15,09:00:00,12:00:00,Gent
+2,Workshop over Machine Learning,"Een praktische workshop om de basis van machine learning te leren.",2024-06-25,13:00:00,17:00:00,Gent
+3,Data Science Summit,"Een bijeenkomst van experts om de laatste trends en toepassingen in data science te bespreken.",2024-06-20,10:00:00,14:00:00,Aalst
+4,Blockchain Innovatie Summit,"Een conferentie over de nieuwste toepassingen van blockchain-technologie in verschillende industrieën.",2024-07-10,10:00:00,14:00:00,Brussel

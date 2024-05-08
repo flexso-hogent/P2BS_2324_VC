@@ -1,20 +1,16 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageToast",
-    "sap/ui/model/json/JSONModel"
+    "sap/ui/model/odata/v2/ODataModel"
 ], function (Controller, MessageToast, ODataModel) {
     "use strict";
 
     return Controller.extend("flexso.controller.EventManager", {
         onInit: function () {
             // OData model voor nieuwe events
-            var eventModel = new ODataModel({
-                name: "",
-                description: "",
-                date: null,
-                location: ""
-            });
-            this.getView().setModel(eventModel, "eventModel");
+            var sServiceUrl = "/odata/v2/event/"; 
+            var oODataModel = new ODataModel(sServiceUrl, true);
+            this.getView().setModel(oODataModel, "eventModel");
         },
 
         onNavBack: function () {
@@ -23,9 +19,7 @@ sap.ui.define([
 
         onSaveEvent: function () {
             var oEventData = this.getView().getModel("eventModel").getData();
-
-            // Communiceer met backend om event te creëren
-            var oODataModel = this.getView().getModel(); 
+            var oODataModel = this.getView().getModel("eventModel");
             oODataModel.create("/Events", oEventData, {
                 success: function () {
                     MessageToast.show("Event created successfully.");
